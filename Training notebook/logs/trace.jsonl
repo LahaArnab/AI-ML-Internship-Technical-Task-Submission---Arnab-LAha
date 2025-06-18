@@ -1,0 +1,2 @@
+{"instruction": "Compress the folder reports into reports.tar.gz.", "generated_plan": ["tar -czf report_folder | tar -czf report_folder.tga"]}
+{"instruction": "Compress the folder reports into reports.tar.gz.", "generated_plan": ["ls -1 | xargs | tar --no-recursion -czf reports.tar.*"]}
