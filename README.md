@@ -35,7 +35,7 @@
    - Gradient Accumulation Steps: 8
    - Learning Rate: 2e-4
    - Scheduler: Cosine
-   - Training Epochs: 3
+   - Training Epochs: 65
    - Max Steps: 250
 
 3. **PEFT Configuration**
