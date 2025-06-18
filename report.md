@@ -56,10 +56,5 @@ final/
         └── checkpoint-250/
 ```
 
-## Performance & Limitations
 
-- Model trained on CPU with optimized parameters
-- Limited by computational resources
-- Focus on practical command-line queries
-- Specialized for development environment questions
 
