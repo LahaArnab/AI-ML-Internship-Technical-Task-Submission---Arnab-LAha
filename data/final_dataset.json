@@ -1,0 +1,200 @@
+{"question":"How do I undo the most recent local commits in Git?","answer":"git commit -m \"Something terribly misguided\" # (0: Your Accident) | git reset HEAD~                              # (1)"}
+{"question":"How do I delete a Git branch locally and remotely?","answer":"git push <remote_name> --delete <branch_name> | git push <remote_name> :<branch_name>"}
+{"question":"How can I rename a local Git branch?","answer":"git branch -m <newname> | git branch -m <oldname> <newname>"}
+{"question":"How do I undo &#39;git add&#39; before commit?","answer":"git reset <file> | git reset"}
+{"question":"How do I force &quot;git pull&quot; to overwrite local files?","answer":"git fetch --all | git branch backup-main"}
+{"question":"How to check out a remote Git branch?","answer":"git fetch | git branch -v -a"}
+{"question":"How do I make Git forget about a file that was tracked, but is now in .gitignore?","answer":"git update-index --skip-worktree <file> | git rm --cached <file>"}
+{"question":"How do I remove local (untracked) files from the current Git working tree?","answer":"Print out the list of files and directories which will be removed (dry run) | Delete the files from the repository"}
+{"question":"How to modify existing, unpushed commit messages?","answer":"git commit --amend | git commit --amend -m \"New commit message\""}
+{"question":"How do I revert a Git repository to a previous commit?","answer":"rebase -i | This will detach your HEAD, that is, leave you with no branch checked out:"}
+{"question":"How do I change the URI (URL) for a remote Git repository?","answer":"git remote -v | git remote set-url origin <NEW_GIT_URL_HERE>"}
+{"question":"Move the most recent commit(s) to a new branch with Git","answer":"Note: Any changes not committed will be lost. | git checkout existingbranch"}
+{"question":"How do I discard unstaged changes in Git?","answer":"git stash save --keep-index --include-untracked"}
+{"question":"Reset local repository branch to be just like remote repository HEAD","answer":"git fetch origin | git reset --hard origin\/master"}
+{"question":"How can I reset or revert a file to a specific revision?","answer":"git checkout c5f567 -- file1\/to\/restore file2\/to\/restore | git checkout c5f567~1 -- file1\/to\/restore file2\/to\/restore"}
+{"question":"How do I push a new local branch to a remote Git repository and track it too?","answer":"git checkout -b <branch> | git push -u origin <branch>"}
+{"question":"How to determine the URL that a local Git repository was originally cloned from","answer":"git config --get remote.origin.url | git remote show origin"}
+{"question":"How do I add an empty directory to a Git repository?","answer":"Ignore everything in this directory | Except this file"}
+{"question":"How do I resolve merge conflicts in a Git repository?","answer":"git mergetool | git config merge.tool vimdiff"}
+{"question":"How can I delete a remote tag?","answer":"git push origin :tagname | git push --delete origin tagname"}
+{"question":"Undo a Git merge that hasn&#39;t been pushed yet","answer":"git reset --hard commit_sha | git reset --hard HEAD~1"}
+{"question":"How do I clone all remote branches?","answer":"cd myproject | git branch"}
+{"question":"How do I update or sync a forked repository on GitHub?","answer":"Add the remote, call it \"upstream\": | Fetch all the branches of that remote into remote-tracking branches"}
+{"question":"How do I remove a submodule?","answer":"Note: a\/submodule (no trailing slash) | or, if you want to leave it in your working tree and have done step 0"}
+{"question":"How do I delete a commit from a branch?","answer":"git reset --hard HEAD~1 | git reset --hard <sha1-commit-id>"}
+{"question":"Undoing a git rebase","answer":"git reflog | git reset --soft \"HEAD@{2}\""}
+{"question":"How do I get the current branch name in Git?","answer":"git branch | git rev-parse --abbrev-ref HEAD"}
+{"question":"Message &#39;src refspec master does not match any&#39; when pushing commits in Git","answer":"git init | git add ."}
+{"question":"How do I clone a specific Git branch?","answer":"git clone --single-branch --branch <branchname> <remote-repo>"}
+{"question":"Make an existing Git branch track a remote branch?","answer":"--set-upstream | git branch -u upstream\/foo"}
+{"question":"Remove a file from a Git repository without deleting it from the local filesystem","answer":"git rm --cached file_to_remove.txt | git rm --cached -r directory_to_remove"}
+{"question":"Move existing, uncommitted work to a new branch in Git","answer":"git switch -c <new-branch> | git checkout -b <new-branch>"}
+{"question":"How do I stash only one file out of multiple files that have changed?","answer":"git stash push -p -m \"my commit message\""}
+{"question":"How do I create a remote Git branch?","answer":"git push -u | git config --global push.default current"}
+{"question":"Commit only part of a file&#39;s changes in Git","answer":"git add --patch <filename> | git add -p <filename>"}
+{"question":"How do I list all the files in a commit?","answer":"git diff-tree --no-commit-id --name-only bd61ad98 -r | git show --pretty=\"\" --name-only bd61ad98"}
+{"question":"How do you push a tag to a remote repository using Git?","answer":"git push origin tag_name"}
+{"question":"Difference between &quot;git add -A&quot; and &quot;git add .&quot;","answer":"Changed but not updated: | modified:   change-me"}
+{"question":"How do I make git use the editor of my choice for editing commit messages?","answer":"git config --global core.editor \"vim\""}
+{"question":"What does cherry-picking a commit with Git mean?","answer":"git switch master | git cherry-pick <commit-hash>"}
+{"question":"How do I get the directory where a Bash script is located from within the script itself?","answer":"Resolve symlinks recursively | Get symlink directory"}
+{"question":"How do I check if a directory exists or not in a Bash shell script?","answer":"It is a symlink! | Symbolic link specific commands go here."}
+{"question":"How can I check if a program exists from a Bash script?","answer":"command -v <the_command> | command -v foo >\/dev\/null 2>&1 || { echo >&2 \"I require foo but it's not installed.  Aborting.\"; exit 1; }"}
+{"question":"How do I split a string on a delimiter in Bash?","answer":"process \"$i\" | process \"$i\""}
+{"question":"How to change the output color of echo in Linux","answer":".---------- constant part! | vvvv vvvv-- the code from above"}
+{"question":"How do I parse command line arguments in Bash?","answer":"sed 's\/[^=]*=\/\/' <<< \"$i\" | echo \"$i\" | sed 's\/[^=]*=\/\/'"}
+{"question":"How do I set a variable to the output of a command in Bash?","answer":"command"}
+{"question":"Loop through an array of strings in Bash?","answer":"or do whatever with individual element of the array | You can access them using echo \"${arr[0]}\", \"${arr[1]}\" also"}
+{"question":"How to reload .bashrc settings without logging out and back in again?","answer":"source ~\/.bashrc"}
+{"question":"How to redirect and append both standard output and standard error to a file with Bash","answer":"Bash executes the redirects from left to right as follows:"}
+{"question":"How do I prompt for Yes\/No\/Cancel input in a Linux shell script?","answer":"read -p \"Do you wish to install this program? \" yn | read -p \"Install (${yesword} \/ ${noword})? \" yn"}
+{"question":"Difference between sh and Bash","answer":"Bash supports a --posix switch, which makes it more POSIX-compliant. It also tries to mimic POSIX if invoked as sh."}
+{"question":"How to specify the private SSH-key to use when executing shell command on Git?","answer":"Git will invoke SSH which will find its agent by environment variable; this will, in turn, have the key loaded."}
+{"question":"Make a Bash alias that takes a parameter?","answer":"myfunction | myfunction original.conf my.conf"}
+{"question":"How to convert a string to lower case in Bash","answer":"echo \"$a\" | tr '[:upper:]' '[:lower:]' | echo \"$a\" | awk '{print tolower($0)}'"}
+{"question":"How to redirect output to a file and stdout","answer":"ls -a | tee output.file"}
+{"question":"YYYY-MM-DD format date in shell script","answer":"put current date as yyyy-mm-dd in $date | -1 -> explicit current date, bash >=4.3 defaults to current time if not provided"}
+{"question":"How can I declare and use Boolean variables in a shell script?","answer":"...do something interesting... | ...do something interesting..."}
+{"question":"How to escape single quotes within single quoted strings","answer":"echo 'abc''123' | echo 'abc'\\''123'"}
+{"question":"Assigning default values to shell variables with a single command in bash","answer":"The value of VARIABLE remains untouched. | Then that value will be assigned to FOO"}
+{"question":"Count number of lines in a non binary file (Like a CSV or a TXT) file in terminal","answer":"wc -l \/dir\/file.txt | wc -l < \/dir\/file.txt"}
+{"question":"Replace one substring for another string in shell script","answer":"prints 'I love Sara and Marry' | prints 'The secret code is XXXXX'"}
+{"question":"How to echo shell commands as they are executed","answer":"cat shl | bash -x shl"}
+{"question":"Parsing JSON with Unix tools","answer":"Python 3: | Python 2:"}
+{"question":"Propagate all arguments in a Bash shell script","answer":"cat no_quotes.sh | cat quotes.sh"}
+{"question":"How do I clear\/delete the current line in terminal?","answer":"Bash Emacs Editing Mode Cheat Sheet"}
+{"question":"Set environment variables from file of key\/value pairs","answer":"source .\/conf\/prac1"}
+{"question":"In Bash, how can I check if a string begins with some value?","answer":"The == comparison operator behaves differently within a double-brackets | test than within single brackets."}
+{"question":"Get current directory or folder name (without the full path)","answer":"...more robust than echo for unusual names | (consider a directory named -e or -n)"}
+{"question":"How do I use sudo to redirect output to a location I don&#39;t have permission to write to?","answer":"ls -hal \/root\/ > \/root\/test.out"}
+{"question":"How to add line break to &#39;git commit -m&#39; from the command line?","answer":"git commit -m 'Message | git commit -F- <<EOF"}
+{"question":"How to permanently set $PATH on Linux\/Unix","answer":"bash\ndash"}
+{"question":"Count number of lines in a git repository","answer":"git ls-files | xargs cat | wc -l | git ls-files | xargs wc -l"}
+{"question":"Given two directory trees, how can I find out which files differ by content?","answer":"diff -qr dir1\/ dir2\/ | diff -qrN dir1\/ dir2\/                            # with short flag aliases"}
+{"question":"Add a new element to an array without specifying the index in Bash","answer":"Bash Reference Manual:"}
+{"question":"Check number of arguments passed to a Bash script","answer":"Bash Conditional Expressions"}
+{"question":"Difference between single and double quotes in Bash","answer":", \\, and, when history expansion is enabled, !. The characters $ and | echo \"$(echo \"upg\")\""}
+{"question":"Setting environment variables on OS X","answer":"Set environment variables here so they are available globally to all apps | (and Terminal), including those launched via Spotlight."}
+{"question":"How to mount a host directory in a Docker container","answer":"alpine | \/container\/directory"}
+{"question":"Syntax for a single-line while loop in Bash","answer":"while true | <arrow up> while true; do    echo \"hello\";    sleep 2; done"}
+{"question":"Shell command to tar directory excluding certain files\/folders","answer":"tar --exclude='.\/folder' --exclude='.\/upload\/folder2' -zcvf \/backup\/filename.tgz ."}
+{"question":"How do I tar a directory of files and folders without including the directory itself?","answer":"mkdir my_directory | touch my_directory\/file1"}
+{"question":"Tar a directory, but don&#39;t store full absolute paths in the archive","answer":"tar -cjf site1.tar.bz2 -C \/var\/www\/site1 . | tar -cjf site1.tar.bz2 -C \/var\/www\/site1 ."}
+{"question":"Utilizing multi core for tar+gzip\/bzip compression\/decompression","answer":"tar cf - paths-to-archive | pigz > archive.tar.gz | tar cf - paths-to-archive | pigz -9 -p 32 > archive.tar.gz"}
+{"question":"How to uncompress a tar.gz in another directory","answer":"tar xzf archive.tar.gz -C \/destination | gzip -dc archive.tar.gz | tar -xf - -C \/destination"}
+{"question":"What is the difference between tar and zip?","answer":"tar in itself just bundles files together (the result is called a tarball), while zip applies compression as well."}
+{"question":"Tar archiving that takes input from a list of files","answer":"tar -cvf allfiles.tar -T mylist.txt | tar -cvf allfiles.tar -T mylist.txt"}
+{"question":"Create a tar.xz in one command","answer":"tar cfJ <archive.tar.xz> <files> | tar -cJf <archive.tar.xz> <files>"}
+{"question":"How do I turn off the output from tar commands on Unix?","answer":"tar -zxf tmp.tar.gz -C ~\/tmp1 | tar -zxf tmp.tar.gz -C ~\/tmp1"}
+{"question":"Excluding directory when creating a .tar.gz file","answer":"tar -pczf MyBackup.tar.gz \/home\/user\/public_html\/ --exclude \"\/home\/user\/public_html\/tmp\" | tar -pczf MyBackup.tar.gz \/home\/user\/public_html\/ --exclude \"\/home\/user\/public_html\/tmp\""}
+{"question":"How to check if a Unix .tar.gz file is a valid file without uncompressing?","answer":"tar -tzf my_tar.tar.gz >\/dev\/null | tar -tzf my_tar.tar.gz >\/dev\/null"}
+{"question":"tar: add all files and directories in current directory INCLUDING .svn and so on","answer":"tar -czf \/tmp\/workspace.tar.gz . | tar -czf workspace.tar.gz workspace"}
+{"question":"How to extract filename.tar.gz file","answer":"file ~\/Downloads\/filename.tbz2 | tar xvf filename.tar"}
+{"question":"How do I tar a directory without retaining the directory structure?","answer":"tar czf ~\/backup.tgz *"}
+{"question":"tar: file changed as we read it","answer":"tar -czf sample.tar.gz dir1 dir2 | tar -czf sample.tar.gz dir1 dir2"}
+{"question":"reading tar file contents without untarring it, in python script","answer":"tar = tarfile.open(\"test.tar\")"}
+{"question":"gzip: stdin: not in gzip format tar: Child returned status 1 tar: Error is not recoverable: exiting now","answer":"gzip -V | gzip 1.3.5"}
+{"question":"I want to create a script for unzip (.tar.gz) file via (Python)","answer":"tar = tarfile.open(fname, \"r:gz\") | tar = tarfile.open(fname, \"r:\")"}
+{"question":"Listing the content of a tar file or a directory only down to some level","answer":"tar tvf scripts.tar | awk -F\/ '{if (NF<4) print }' | tar tf scripts.tar | awk -F\/ '{if (NF<3) print }'"}
+{"question":"How can you untar more than one file at a time?","answer":"basename \"$f\" .tar | tar xf a.tar b.tar"}
+{"question":"Uncompress tar.gz file","answer":"tar zxvf <yourfile>.tar.gz -C \/usr\/src\/ | Use -C option of tar:"}
+{"question":"Check the total content size of a tar gz file","answer":"tar tzvf archive.tar.gz | sed 's\/ \\+\/ \/g' | cut -f3 -d' ' | sed '2,$s\/^\/+ \/' | paste -sd' ' | bc"}
+{"question":"How can I build a tar from stdin?","answer":"tar cfz foo.tgz --files-from=-"}
+{"question":"How to extract a single file from tar to a different directory?","answer":"tar xvf test.tar -C anotherDirectory\/ testfile1"}
+{"question":"How to extract tar file in Mac terminal","answer":"tar -xvf myfile.tar | tar -xzvf myfile.tar.gz"}
+{"question":"How do I extract a tar file in Java?","answer":"Gzip is part of Java SE (and I'm guessing the Ant implementation follows the same model)."}
+{"question":"Rename Directory Name Before tar Happens","answer":"tar -zxf my-dir.tar.gz --transform s\/my-dir\/your-dir\/ | tar -zxf my-dir.tar.gz --transform s\/my-dir\/your-dir\/"}
+{"question":"How do I untar a subdirectory into the current directory?","answer":"tar --strip-components=1 -zxvf wordpress.tgz"}
+{"question":"How to send a compressed archive that contains executables so that Google&#39;s attachment filter won&#39;t reject it","answer":"tar -cvzf filename.tar.gz directory_to_compress\/ | tar -cvzf filename.bla directory_to_compress\/"}
+{"question":"How to install Go in alpine linux","answer":"download go tar | compile code"}
+{"question":"How to use Pigz with Tar","answer":"tar cf - paths-to-archive | pigz -9 -p 32 > archive.tar.gz"}
+{"question":"Python packaging: wheels vs tarball (tar.gz)","answer":"Python needs a package format that is easier to install than sdist."}
+{"question":"Tarballing without Git metadata","answer":"tar cvf ~\/app.tar --exclude .git --exclude \"*.log\" ."}
+{"question":"Extract tar the tar.bz2 file error","answer":"tar -jxvf | tar --help"}
+{"question":"Shell &#39;tar: not found in archive&#39; error when using regular expression","answer":"tar -xf *.gz | tar -xf abc.tar.gz def.tar.gz ghi.tar.gz"}
+{"question":"How to create a tar file that omits timestamps for its contents?","answer":"tar --sort=name --owner=root:0 --group=root:0 --mtime='UTC 1980-02-01' ... | gzip -n"}
+{"question":"Opening a .tar.gz file with a single command","answer":"tar xzf file.tar.gz"}
+{"question":"Extract files contained in archive.tar.gz to new directory named archive","answer":"tar -xvzf archive.tar.gx -C archive_dir | tar -xvzf $a -C $a_dir"}
+{"question":"How to construct a TarFile object in memory from byte buffer in Python 3?","answer":"use \"tar\" as a regular TarFile object | tar = tarfile.open(fileobj=file_like_object)"}
+{"question":"python write string directly to tarfile","answer":"tar = tarfile.TarFile(\"test.tar\",\"w\")"}
+{"question":"grep: show lines surrounding each match","answer":"grep -B 3 -A 2 foo README.txt | grep -C 3 foo README.txt"}
+{"question":"How do I recursively grep all directories and subdirectories?","answer":"grep -r \"texthere\" . | grep -r \"texthere\" ."}
+{"question":"How to grep (search through) committed code in the Git history","answer":"git log -SFoo -- path_containing_change | git log -SFoo --since=2009.1.1 --until=2010.1.1 -- path_containing_change"}
+{"question":"Negative matching using grep (match lines that do not contain foo)","answer":"grep -v is your friend: | grep --help | grep invert"}
+{"question":"Can grep show only words that match search pattern?","answer":"grep -oh \"\\w*th\\w*\" * | grep -oh \"\\w*th\\w*\" *"}
+{"question":"Use grep --exclude\/--include syntax to not grep through certain files","answer":"grep pattern -r --include=\\*.cpp --include=\\*.h rootdir | grep pattern -r --include=\\*.{cpp,h} rootdir"}
+{"question":"How to &#39;grep&#39; a continuous stream?","answer":"tail -f file | grep --line-buffered my_pattern"}
+{"question":"How can I grep Git commits for a certain word?","answer":"git log --grep=word | git log -Sword"}
+{"question":"Delete all local Git branches","answer":"git branch --merged | grep -v \\* | xargs | mkdir br"}
+{"question":"How can I use grep to find a word inside a folder?","answer":"grep -nr 'yourString*' . | grep -nr 'yourString*' ."}
+{"question":"Colorized grep -- viewing the entire file with highlighted matches","answer":"grep --color 'pattern\\|$' file | grep --color -E 'pattern|$' file"}
+{"question":"How can I exclude one word with grep?","answer":"grep -v \"unwanted_word\" file | grep XXXXXXXX | grep -v 'unwanted_word' file"}
+{"question":"grep a tab in UNIX","answer":"grep -P '\\t' * | grep -P '\\t' *"}
+{"question":"How can I grep for a string that begins with a dash\/hyphen?","answer":"grep -- -X"}
+{"question":"Get line number while using grep","answer":"grep -n SEARCHTERM file1 file2 ... | grep -n SEARCHTERM file1 file2 ..."}
+{"question":"How can I format my grep output to show line numbers at the end of the line, and also the hit count?","answer":"grep -in null myfile.txt | grep -in null myfile.txt | awk -F: '{print $2\" - Line number : \"$1}'"}
+{"question":"How to check if a file contains a specific string using Bash","answer":"echo hello | grep hi ; echo $? | echo hello | grep he ; echo $?"}
+{"question":"How to perform grep operation on all files in a directory?","answer":"grep -rni \"string\" * | grep -rni \"string\" *"}
+{"question":"Fast way of finding lines in one file that are not in another?","answer":"output lines in file1 that are not in file2 | split -l 20000 --filter='gawk -f linesnotin.awk - file2' < file1"}
+{"question":"How to suppress binary file matching results in grep","answer":"grep -I -n -H | grep -InH your-word *"}
+{"question":"Display filename before matching line","answer":"grep 'pattern' file \/dev\/null | grep -n 'pattern' file \/dev\/null"}
+{"question":"Highlight text similar to grep, but don&#39;t filter out text","answer":"ack --passthru 'pattern1' file_name | command_here | ack --passthru 'pattern1'"}
+{"question":"How to invert a grep expression","answer":"ls -R |grep -v -E .*[\\.exe]$\\|.*[\\.html]$"}
+{"question":"Grep regex NOT containing a string","answer":"grep matches, grep -v does the inverse. If you need to \"match A but not B\" you usually use pipes: | grep \"${PATT}\" file | grep -v \"${NOTPATT}\""}
+{"question":"How to get the process ID to kill a nohup process?","answer":"cat save_pid.txt"}
+{"question":"How can I have grep not print out &#39;No such file or directory&#39; errors?","answer":"grep pattern * -s -R -n"}
+{"question":"Match two strings in one line with grep","answer":"grep 'string1' filename | grep 'string2' | grep 'string1.*string2\\|string2.*string1' filename"}
+{"question":"grep without showing path\/file:line","answer":"grep -h FOO \/your\/path\/*.bar | grep -h FOO \/your\/path\/*.bar"}
+{"question":"Regex (grep) for multi-line search needed","answer":"grep -Pzo \"(?s)^(\\s*)\\N*main.*?{.*?^\\1}\" *.c"}
+{"question":"How to find patterns across multiple lines using grep?","answer":"sudo apt install pcre2-utils # PCRE2 | sudo apt install pcregrep    # Older PCRE"}
+{"question":"How to concatenate multiple lines of output to one line?","answer":"grep pattern file | tr '\\n' ' ' | grep pattern file | awk '{print}' ORS='\" '"}
+{"question":"What are good grep tools for Windows?","answer":"Grep tools with a graphical interface"}
+{"question":"Using grep to search for a string that has a dot in it","answer":"grep -r \"0\\.49\" * | grep -r 0\\\\.49 *"}
+{"question":"How to grep a string in a directory and all its subdirectories?","answer":"grep -R 'string' dir\/ | grep -R 'string' dir\/"}
+{"question":"PowerShell equivalent to grep -f","answer":"The -Pattern parameter in Select-String supports an array of patterns. So the one you're looking for is:"}
+{"question":"grep output to show only matching file","answer":"grep -l | grep -l"}
+{"question":"How to grep for case insensitive string in a file?","answer":"grep -iF \"success...\" file1 | grep -iF \"success...\" file1"}
+{"question":"Remove blank lines with grep","answer":"grep -v -e '^$' foo.txt | grep -v -e '^[[:space:]]*$' foo.txt"}
+{"question":"Windows recursive grep command-line","answer":"Line position: end of line"}
+{"question":"Grep &#39;binary file matches&#39;. How to get normal grep output?","answer":"grep --text | grep -a"}
+{"question":"How can I activate a virtualenv in Linux?","answer":"source venv\/bin\/activate"}
+{"question":"Activate python virtualenv in Dockerfile","answer":"Enable venv | Enable venv"}
+{"question":"how to create a venv with a different python version","answer":"virtualenv -p <path-to-new-python-installation> <new-venv-name> | virtualenv -p  C:\\Users\\ssharma\\AppData\\Local\\Programs\\Python\\Python38\\python.exe venv38"}
+{"question":"Installing venv for python3 in WSL (Ubuntu)","answer":"source yourVenv\/bin\/activate | virtualenv -p python3 yourVenv"}
+{"question":"How can I properly use Pyenv and venv?","answer":"pip freeze > requirements.txt | pip install -r requirements.txt"}
+{"question":"venv doesn&#39;t create activate script python3","answer":"tar -vzxf setuptools-3.4.4.tar.gz | tar -vzxf pip-1.5.6.tar.gz"}
+{"question":"pip3 installs inside virtual environment with python3.6 failing due to ssl module not available","answer":"tar xvf Python-3.6.0.tgz | Python 3.6 Installation:"}
+{"question":"Control the pip version in virtualenv","answer":"source .venv\/bin\/activate | source .venv\/bin\/activate"}
+{"question":"python3.8-venv not working with python3.8 -m venv env","answer":"source env\/bin\/activate"}
+{"question":"How to create a Python 2.7 virtual environment using Python 3.7","answer":"python -m pip install virtualenv | python3 -m venv something"}
+{"question":"Python-dotenv could not parse statement starting at line 2","answer":"export MY_ENV_VAR=value"}
+{"question":"How do I update a Python virtual environment with `venv` (in Python 3.3+) to use a newer version of Python?","answer":"python -m venv --help | python -m venv --help"}
+{"question":"I keep getting a message to upgrade pip","answer":"virtualenv venv | venv\/bin\/pip install -U pip"}
+{"question":"Install python3-venv module on linux mint","answer":"python3 -m venv test"}
+{"question":"How can I upgrade pip inside a venv inside a Dockerfile?","answer":"This step does nothing | And therefore this upgrades the system pip"}
+{"question":"Why &#39;python3 -m venv myenv&#39; installs older version of pip into myenv than any version of pip I can find anywhere on the system?","answer":"python3 -c 'import ensurepip; print(ensurepip.version())' | We run ensurepip in isolated mode to avoid side effects from"}
+{"question":"VS Code: Python Interpreter can&#39;t find my venv","answer":"pip install -r requirements.txt to install the requirements. | py -m venv venv to create a new one"}
+{"question":"How to omit (remove) virtual environment (venv) from python coverage unit testing?","answer":"coverage run --omit 'venv\/*' -m unittest tests\/*.py && coverage report -m | coverage run --omit 'venv\/*' -m unittest"}
+{"question":"GitHub Actions unable to set up Python Virtual Environment","answer":"pip install --upgrade pip | source env\/bin\/activate"}
+{"question":"How can I list all the virtual environments created with venv?","answer":"tree -d -L 1 lib"}
+{"question":"Downgrade Python version in virtual environment","answer":"Save current installs | Shutdown current env"}
+{"question":"opencv: Could not load the Qt platform plugin &quot;xcb&quot; in &quot;&quot; even though it was found","answer":"pip uninstall <PyQT package installed> | pip uninstall PyQt5"}
+{"question":"Anaconda environment bash prefix too long","answer":"conda config --describe env_prompt | env_prompt (str)"}
+{"question":"What is the difference between pipx and using pip install inside a virtual environment?","answer":"python -c \"import <library>\" | python -c \"import <library>\""}
+{"question":"What is the purpose of pyvenv.cfg after the creation of a Python virtual environment?","answer":"cat myenv\/pyvenv.cfg | Python version"}
+{"question":"How can I install two versions of Python on a single Conda Environment?","answer":"conda create -n snakes python=3.5.3 python=3.7.1 | mamba create -n snakes python=3.5.3 python=3.7.1"}
+{"question":"zsh: no matches found - trying to install pydantic[email]","answer":"pip install 'pydantic[email]'"}
+{"question":"Consequences for virtual env when system&#39;s Python is removed and\/or updated","answer":"pip freeze > installed_libs.txt | deactivate"}
+{"question":"How to create an empty python virtual environment","answer":"python3 --version | python3 -m venv test_venv"}
+{"question":"How can I get my vscode terminal to use my venv for python rather than the system version?","answer":"python -m venv myvenv | python -m venv myvenv"}
+{"question":"pyvenv returns non-zero exit status 1 (during the installation of pip stage)","answer":"Within it, invoke this well-known script to manually install pip(1) into \/pyvenv.d: | latest version already."}
+{"question":"python 3.8 venv missing activate command","answer":"source test_env\/bin\/activate | python3 -m venv --without-pip test_env"}
+{"question":"Reinstall packages automatically into virtual environment after Python minor version upgrade","answer":"in 3.7 runtime..."}
+{"question":"python 3.7 venv broken after upgrade to Ubuntu 20.04","answer":"ln -s  \/usr\/bin\/python3.7 python3"}
+{"question":"How to get pip to install packages into the virtual environment?","answer":"source tarballs and run python setup.py install after unpacking, with"}
+{"question":"How to make venv completely portable?","answer":"python3 -m venv --copies venv | sed -i '43s\/.*\/VIRTUAL_ENV=\"$(cd \"$(dirname \"$(dirname \"${BASH_SOURCE[0]}\" )\")\" \\&\\& pwd)\"\/' venv\/bin\/activate"}
+{"question":"Creating a venv with python 3.10 manually installed on Ubuntu, fails","answer":"python distribution with just apt install python#.# | source package) or to make several small packages instead of a big one"}
+{"question":"Anaconda 3 for Linux Has No ensurepip?","answer":"===== First create the venv without pip, and **activate** it. | pyvenv test --without-pip"}
+{"question":"gunicorn not found when running a docker container with venv","answer":"source venv\/bin\/activate | gunicorn -b :5000 --access-logfile - --error-logfile - wsgi:app"}
+{"question":"Python3 venv: Can env directory be renamed?","answer":"virtualenv --relocatable ENV"}

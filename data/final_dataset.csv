@@ -1,0 +1,202 @@
+question,answer
+How do I undo the most recent local commits in Git?,"git commit -m ""Something terribly misguided"" # (0: Your Accident) | git reset HEAD~                              # (1)"
+How do I delete a Git branch locally and remotely?,git push <remote_name> --delete <branch_name> | git push <remote_name> :<branch_name>
+How can I rename a local Git branch?,git branch -m <newname> | git branch -m <oldname> <newname>
+How do I undo &#39;git add&#39; before commit?,git reset <file> | git reset
+How do I force &quot;git pull&quot; to overwrite local files?,git fetch --all | git branch backup-main
+How to check out a remote Git branch?,git fetch | git branch -v -a
+"How do I make Git forget about a file that was tracked, but is now in .gitignore?",git update-index --skip-worktree <file> | git rm --cached <file>
+How do I remove local (untracked) files from the current Git working tree?,Print out the list of files and directories which will be removed (dry run) | Delete the files from the repository
+"How to modify existing, unpushed commit messages?","git commit --amend | git commit --amend -m ""New commit message"""
+How do I revert a Git repository to a previous commit?,"rebase -i | This will detach your HEAD, that is, leave you with no branch checked out:"
+How do I change the URI (URL) for a remote Git repository?,git remote -v | git remote set-url origin <NEW_GIT_URL_HERE>
+Move the most recent commit(s) to a new branch with Git,Note: Any changes not committed will be lost. | git checkout existingbranch
+How do I discard unstaged changes in Git?,git stash save --keep-index --include-untracked
+Reset local repository branch to be just like remote repository HEAD,git fetch origin | git reset --hard origin/master
+How can I reset or revert a file to a specific revision?,git checkout c5f567 -- file1/to/restore file2/to/restore | git checkout c5f567~1 -- file1/to/restore file2/to/restore
+How do I push a new local branch to a remote Git repository and track it too?,git checkout -b <branch> | git push -u origin <branch>
+How to determine the URL that a local Git repository was originally cloned from,git config --get remote.origin.url | git remote show origin
+How do I add an empty directory to a Git repository?,Ignore everything in this directory | Except this file
+How do I resolve merge conflicts in a Git repository?,git mergetool | git config merge.tool vimdiff
+How can I delete a remote tag?,git push origin :tagname | git push --delete origin tagname
+Undo a Git merge that hasn&#39;t been pushed yet,git reset --hard commit_sha | git reset --hard HEAD~1
+How do I clone all remote branches?,cd myproject | git branch
+How do I update or sync a forked repository on GitHub?,"Add the remote, call it ""upstream"": | Fetch all the branches of that remote into remote-tracking branches"
+How do I remove a submodule?,"Note: a/submodule (no trailing slash) | or, if you want to leave it in your working tree and have done step 0"
+How do I delete a commit from a branch?,git reset --hard HEAD~1 | git reset --hard <sha1-commit-id>
+Undoing a git rebase,"git reflog | git reset --soft ""HEAD@{2}"""
+How do I get the current branch name in Git?,git branch | git rev-parse --abbrev-ref HEAD
+Message &#39;src refspec master does not match any&#39; when pushing commits in Git,git init | git add .
+How do I clone a specific Git branch?,git clone --single-branch --branch <branchname> <remote-repo>
+Make an existing Git branch track a remote branch?,--set-upstream | git branch -u upstream/foo
+Remove a file from a Git repository without deleting it from the local filesystem,git rm --cached file_to_remove.txt | git rm --cached -r directory_to_remove
+"Move existing, uncommitted work to a new branch in Git",git switch -c <new-branch> | git checkout -b <new-branch>
+How do I stash only one file out of multiple files that have changed?,"git stash push -p -m ""my commit message"""
+How do I create a remote Git branch?,git push -u | git config --global push.default current
+Commit only part of a file&#39;s changes in Git,git add --patch <filename> | git add -p <filename>
+How do I list all the files in a commit?,"git diff-tree --no-commit-id --name-only bd61ad98 -r | git show --pretty="""" --name-only bd61ad98"
+How do you push a tag to a remote repository using Git?,git push origin tag_name
+Difference between &quot;git add -A&quot; and &quot;git add .&quot;,Changed but not updated: | modified:   change-me
+How do I make git use the editor of my choice for editing commit messages?,"git config --global core.editor ""vim"""
+What does cherry-picking a commit with Git mean?,git switch master | git cherry-pick <commit-hash>
+How do I get the directory where a Bash script is located from within the script itself?,Resolve symlinks recursively | Get symlink directory
+How do I check if a directory exists or not in a Bash shell script?,It is a symlink! | Symbolic link specific commands go here.
+How can I check if a program exists from a Bash script?,"command -v <the_command> | command -v foo >/dev/null 2>&1 || { echo >&2 ""I require foo but it's not installed.  Aborting.""; exit 1; }"
+How do I split a string on a delimiter in Bash?,"process ""$i"" | process ""$i"""
+How to change the output color of echo in Linux,.---------- constant part! | vvvv vvvv-- the code from above
+How do I parse command line arguments in Bash?,"sed 's/[^=]*=//' <<< ""$i"" | echo ""$i"" | sed 's/[^=]*=//'"
+How do I set a variable to the output of a command in Bash?,command
+Loop through an array of strings in Bash?,"or do whatever with individual element of the array | You can access them using echo ""${arr[0]}"", ""${arr[1]}"" also"
+How to reload .bashrc settings without logging out and back in again?,source ~/.bashrc
+How to redirect and append both standard output and standard error to a file with Bash,Bash executes the redirects from left to right as follows:
+How do I prompt for Yes/No/Cancel input in a Linux shell script?,"read -p ""Do you wish to install this program? "" yn | read -p ""Install (${yesword} / ${noword})? "" yn"
+Difference between sh and Bash,"Bash supports a --posix switch, which makes it more POSIX-compliant. It also tries to mimic POSIX if invoked as sh."
+How to specify the private SSH-key to use when executing shell command on Git?,"Git will invoke SSH which will find its agent by environment variable; this will, in turn, have the key loaded."
+Make a Bash alias that takes a parameter?,myfunction | myfunction original.conf my.conf
+How to convert a string to lower case in Bash,"echo ""$a"" | tr '[:upper:]' '[:lower:]' | echo ""$a"" | awk '{print tolower($0)}'"
+How to redirect output to a file and stdout,ls -a | tee output.file
+YYYY-MM-DD format date in shell script,"put current date as yyyy-mm-dd in $date | -1 -> explicit current date, bash >=4.3 defaults to current time if not provided"
+How can I declare and use Boolean variables in a shell script?,...do something interesting... | ...do something interesting...
+How to escape single quotes within single quoted strings,echo 'abc''123' | echo 'abc'\''123'
+Assigning default values to shell variables with a single command in bash,The value of VARIABLE remains untouched. | Then that value will be assigned to FOO
+Count number of lines in a non binary file (Like a CSV or a TXT) file in terminal,wc -l /dir/file.txt | wc -l < /dir/file.txt
+Replace one substring for another string in shell script,prints 'I love Sara and Marry' | prints 'The secret code is XXXXX'
+How to echo shell commands as they are executed,cat shl | bash -x shl
+Parsing JSON with Unix tools,Python 3: | Python 2:
+Propagate all arguments in a Bash shell script,cat no_quotes.sh | cat quotes.sh
+How do I clear/delete the current line in terminal?,Bash Emacs Editing Mode Cheat Sheet
+Set environment variables from file of key/value pairs,source ./conf/prac1
+"In Bash, how can I check if a string begins with some value?",The == comparison operator behaves differently within a double-brackets | test than within single brackets.
+Get current directory or folder name (without the full path),...more robust than echo for unusual names | (consider a directory named -e or -n)
+How do I use sudo to redirect output to a location I don&#39;t have permission to write to?,ls -hal /root/ > /root/test.out
+How to add line break to &#39;git commit -m&#39; from the command line?,git commit -m 'Message | git commit -F- <<EOF
+How to permanently set $PATH on Linux/Unix,"bash
+dash"
+Count number of lines in a git repository,git ls-files | xargs cat | wc -l | git ls-files | xargs wc -l
+"Given two directory trees, how can I find out which files differ by content?",diff -qr dir1/ dir2/ | diff -qrN dir1/ dir2/                            # with short flag aliases
+Add a new element to an array without specifying the index in Bash,Bash Reference Manual:
+Check number of arguments passed to a Bash script,Bash Conditional Expressions
+Difference between single and double quotes in Bash,", \, and, when history expansion is enabled, !. The characters $ and | echo ""$(echo ""upg"")"""
+Setting environment variables on OS X,"Set environment variables here so they are available globally to all apps | (and Terminal), including those launched via Spotlight."
+How to mount a host directory in a Docker container,alpine | /container/directory
+Syntax for a single-line while loop in Bash,"while true | <arrow up> while true; do    echo ""hello"";    sleep 2; done"
+Shell command to tar directory excluding certain files/folders,tar --exclude='./folder' --exclude='./upload/folder2' -zcvf /backup/filename.tgz .
+How do I tar a directory of files and folders without including the directory itself?,mkdir my_directory | touch my_directory/file1
+"Tar a directory, but don&#39;t store full absolute paths in the archive",tar -cjf site1.tar.bz2 -C /var/www/site1 . | tar -cjf site1.tar.bz2 -C /var/www/site1 .
+Utilizing multi core for tar+gzip/bzip compression/decompression,tar cf - paths-to-archive | pigz > archive.tar.gz | tar cf - paths-to-archive | pigz -9 -p 32 > archive.tar.gz
+How to uncompress a tar.gz in another directory,tar xzf archive.tar.gz -C /destination | gzip -dc archive.tar.gz | tar -xf - -C /destination
+What is the difference between tar and zip?,"tar in itself just bundles files together (the result is called a tarball), while zip applies compression as well."
+Tar archiving that takes input from a list of files,tar -cvf allfiles.tar -T mylist.txt | tar -cvf allfiles.tar -T mylist.txt
+Create a tar.xz in one command,tar cfJ <archive.tar.xz> <files> | tar -cJf <archive.tar.xz> <files>
+How do I turn off the output from tar commands on Unix?,tar -zxf tmp.tar.gz -C ~/tmp1 | tar -zxf tmp.tar.gz -C ~/tmp1
+Excluding directory when creating a .tar.gz file,"tar -pczf MyBackup.tar.gz /home/user/public_html/ --exclude ""/home/user/public_html/tmp"" | tar -pczf MyBackup.tar.gz /home/user/public_html/ --exclude ""/home/user/public_html/tmp"""
+How to check if a Unix .tar.gz file is a valid file without uncompressing?,tar -tzf my_tar.tar.gz >/dev/null | tar -tzf my_tar.tar.gz >/dev/null
+tar: add all files and directories in current directory INCLUDING .svn and so on,tar -czf /tmp/workspace.tar.gz . | tar -czf workspace.tar.gz workspace
+How to extract filename.tar.gz file,file ~/Downloads/filename.tbz2 | tar xvf filename.tar
+How do I tar a directory without retaining the directory structure?,tar czf ~/backup.tgz *
+tar: file changed as we read it,tar -czf sample.tar.gz dir1 dir2 | tar -czf sample.tar.gz dir1 dir2
+"reading tar file contents without untarring it, in python script","tar = tarfile.open(""test.tar"")"
+gzip: stdin: not in gzip format tar: Child returned status 1 tar: Error is not recoverable: exiting now,gzip -V | gzip 1.3.5
+I want to create a script for unzip (.tar.gz) file via (Python),"tar = tarfile.open(fname, ""r:gz"") | tar = tarfile.open(fname, ""r:"")"
+Listing the content of a tar file or a directory only down to some level,tar tvf scripts.tar | awk -F/ '{if (NF<4) print }' | tar tf scripts.tar | awk -F/ '{if (NF<3) print }'
+How can you untar more than one file at a time?,"basename ""$f"" .tar | tar xf a.tar b.tar"
+Uncompress tar.gz file,tar zxvf <yourfile>.tar.gz -C /usr/src/ | Use -C option of tar:
+Check the total content size of a tar gz file,"tar tzvf archive.tar.gz | sed 's/ \+/ /g' | cut -f3 -d' ' | sed '2,$s/^/+ /' | paste -sd' ' | bc"
+How can I build a tar from stdin?,tar cfz foo.tgz --files-from=-
+How to extract a single file from tar to a different directory?,tar xvf test.tar -C anotherDirectory/ testfile1
+How to extract tar file in Mac terminal,tar -xvf myfile.tar | tar -xzvf myfile.tar.gz
+How do I extract a tar file in Java?,Gzip is part of Java SE (and I'm guessing the Ant implementation follows the same model).
+Rename Directory Name Before tar Happens,tar -zxf my-dir.tar.gz --transform s/my-dir/your-dir/ | tar -zxf my-dir.tar.gz --transform s/my-dir/your-dir/
+How do I untar a subdirectory into the current directory?,tar --strip-components=1 -zxvf wordpress.tgz
+How to send a compressed archive that contains executables so that Google&#39;s attachment filter won&#39;t reject it,tar -cvzf filename.tar.gz directory_to_compress/ | tar -cvzf filename.bla directory_to_compress/
+How to install Go in alpine linux,download go tar | compile code
+How to use Pigz with Tar,tar cf - paths-to-archive | pigz -9 -p 32 > archive.tar.gz
+Python packaging: wheels vs tarball (tar.gz),Python needs a package format that is easier to install than sdist.
+Tarballing without Git metadata,"tar cvf ~/app.tar --exclude .git --exclude ""*.log"" ."
+Extract tar the tar.bz2 file error,tar -jxvf | tar --help
+Shell &#39;tar: not found in archive&#39; error when using regular expression,tar -xf *.gz | tar -xf abc.tar.gz def.tar.gz ghi.tar.gz
+How to create a tar file that omits timestamps for its contents?,tar --sort=name --owner=root:0 --group=root:0 --mtime='UTC 1980-02-01' ... | gzip -n
+Opening a .tar.gz file with a single command,tar xzf file.tar.gz
+Extract files contained in archive.tar.gz to new directory named archive,tar -xvzf archive.tar.gx -C archive_dir | tar -xvzf $a -C $a_dir
+How to construct a TarFile object in memory from byte buffer in Python 3?,"use ""tar"" as a regular TarFile object | tar = tarfile.open(fileobj=file_like_object)"
+python write string directly to tarfile,"tar = tarfile.TarFile(""test.tar"",""w"")"
+grep: show lines surrounding each match,grep -B 3 -A 2 foo README.txt | grep -C 3 foo README.txt
+How do I recursively grep all directories and subdirectories?,"grep -r ""texthere"" . | grep -r ""texthere"" ."
+How to grep (search through) committed code in the Git history,git log -SFoo -- path_containing_change | git log -SFoo --since=2009.1.1 --until=2010.1.1 -- path_containing_change
+Negative matching using grep (match lines that do not contain foo),grep -v is your friend: | grep --help | grep invert
+Can grep show only words that match search pattern?,"grep -oh ""\w*th\w*"" * | grep -oh ""\w*th\w*"" *"
+Use grep --exclude/--include syntax to not grep through certain files,"grep pattern -r --include=\*.cpp --include=\*.h rootdir | grep pattern -r --include=\*.{cpp,h} rootdir"
+How to &#39;grep&#39; a continuous stream?,tail -f file | grep --line-buffered my_pattern
+How can I grep Git commits for a certain word?,git log --grep=word | git log -Sword
+Delete all local Git branches,git branch --merged | grep -v \* | xargs | mkdir br
+How can I use grep to find a word inside a folder?,grep -nr 'yourString*' . | grep -nr 'yourString*' .
+Colorized grep -- viewing the entire file with highlighted matches,grep --color 'pattern\|$' file | grep --color -E 'pattern|$' file
+How can I exclude one word with grep?,"grep -v ""unwanted_word"" file | grep XXXXXXXX | grep -v 'unwanted_word' file"
+grep a tab in UNIX,grep -P '\t' * | grep -P '\t' *
+How can I grep for a string that begins with a dash/hyphen?,grep -- -X
+Get line number while using grep,grep -n SEARCHTERM file1 file2 ... | grep -n SEARCHTERM file1 file2 ...
+"How can I format my grep output to show line numbers at the end of the line, and also the hit count?","grep -in null myfile.txt | grep -in null myfile.txt | awk -F: '{print $2"" - Line number : ""$1}'"
+How to check if a file contains a specific string using Bash,echo hello | grep hi ; echo $? | echo hello | grep he ; echo $?
+How to perform grep operation on all files in a directory?,"grep -rni ""string"" * | grep -rni ""string"" *"
+Fast way of finding lines in one file that are not in another?,output lines in file1 that are not in file2 | split -l 20000 --filter='gawk -f linesnotin.awk - file2' < file1
+How to suppress binary file matching results in grep,grep -I -n -H | grep -InH your-word *
+Display filename before matching line,grep 'pattern' file /dev/null | grep -n 'pattern' file /dev/null
+"Highlight text similar to grep, but don&#39;t filter out text",ack --passthru 'pattern1' file_name | command_here | ack --passthru 'pattern1'
+How to invert a grep expression,ls -R |grep -v -E .*[\.exe]$\|.*[\.html]$
+Grep regex NOT containing a string,"grep matches, grep -v does the inverse. If you need to ""match A but not B"" you usually use pipes: | grep ""${PATT}"" file | grep -v ""${NOTPATT}"""
+How to get the process ID to kill a nohup process?,cat save_pid.txt
+How can I have grep not print out &#39;No such file or directory&#39; errors?,grep pattern * -s -R -n
+Match two strings in one line with grep,grep 'string1' filename | grep 'string2' | grep 'string1.*string2\|string2.*string1' filename
+grep without showing path/file:line,grep -h FOO /your/path/*.bar | grep -h FOO /your/path/*.bar
+Regex (grep) for multi-line search needed,"grep -Pzo ""(?s)^(\s*)\N*main.*?{.*?^\1}"" *.c"
+How to find patterns across multiple lines using grep?,sudo apt install pcre2-utils # PCRE2 | sudo apt install pcregrep    # Older PCRE
+How to concatenate multiple lines of output to one line?,"grep pattern file | tr '\n' ' ' | grep pattern file | awk '{print}' ORS='"" '"
+What are good grep tools for Windows?,Grep tools with a graphical interface
+Using grep to search for a string that has a dot in it,"grep -r ""0\.49"" * | grep -r 0\\.49 *"
+How to grep a string in a directory and all its subdirectories?,grep -R 'string' dir/ | grep -R 'string' dir/
+PowerShell equivalent to grep -f,The -Pattern parameter in Select-String supports an array of patterns. So the one you're looking for is:
+grep output to show only matching file,grep -l | grep -l
+How to grep for case insensitive string in a file?,"grep -iF ""success..."" file1 | grep -iF ""success..."" file1"
+Remove blank lines with grep,grep -v -e '^$' foo.txt | grep -v -e '^[[:space:]]*$' foo.txt
+Windows recursive grep command-line,Line position: end of line
+Grep &#39;binary file matches&#39;. How to get normal grep output?,grep --text | grep -a
+How can I activate a virtualenv in Linux?,source venv/bin/activate
+Activate python virtualenv in Dockerfile,Enable venv | Enable venv
+how to create a venv with a different python version,virtualenv -p <path-to-new-python-installation> <new-venv-name> | virtualenv -p  C:\Users\ssharma\AppData\Local\Programs\Python\Python38\python.exe venv38
+Installing venv for python3 in WSL (Ubuntu),source yourVenv/bin/activate | virtualenv -p python3 yourVenv
+How can I properly use Pyenv and venv?,pip freeze > requirements.txt | pip install -r requirements.txt
+venv doesn&#39;t create activate script python3,tar -vzxf setuptools-3.4.4.tar.gz | tar -vzxf pip-1.5.6.tar.gz
+pip3 installs inside virtual environment with python3.6 failing due to ssl module not available,tar xvf Python-3.6.0.tgz | Python 3.6 Installation:
+Control the pip version in virtualenv,source .venv/bin/activate | source .venv/bin/activate
+python3.8-venv not working with python3.8 -m venv env,source env/bin/activate
+How to create a Python 2.7 virtual environment using Python 3.7,python -m pip install virtualenv | python3 -m venv something
+Python-dotenv could not parse statement starting at line 2,export MY_ENV_VAR=value
+How do I update a Python virtual environment with `venv` (in Python 3.3+) to use a newer version of Python?,python -m venv --help | python -m venv --help
+I keep getting a message to upgrade pip,virtualenv venv | venv/bin/pip install -U pip
+Install python3-venv module on linux mint,python3 -m venv test
+How can I upgrade pip inside a venv inside a Dockerfile?,This step does nothing | And therefore this upgrades the system pip
+Why &#39;python3 -m venv myenv&#39; installs older version of pip into myenv than any version of pip I can find anywhere on the system?,python3 -c 'import ensurepip; print(ensurepip.version())' | We run ensurepip in isolated mode to avoid side effects from
+VS Code: Python Interpreter can&#39;t find my venv,pip install -r requirements.txt to install the requirements. | py -m venv venv to create a new one
+How to omit (remove) virtual environment (venv) from python coverage unit testing?,coverage run --omit 'venv/*' -m unittest tests/*.py && coverage report -m | coverage run --omit 'venv/*' -m unittest
+GitHub Actions unable to set up Python Virtual Environment,pip install --upgrade pip | source env/bin/activate
+How can I list all the virtual environments created with venv?,tree -d -L 1 lib
+Downgrade Python version in virtual environment,Save current installs | Shutdown current env
+opencv: Could not load the Qt platform plugin &quot;xcb&quot; in &quot;&quot; even though it was found,pip uninstall <PyQT package installed> | pip uninstall PyQt5
+Anaconda environment bash prefix too long,conda config --describe env_prompt | env_prompt (str)
+What is the difference between pipx and using pip install inside a virtual environment?,"python -c ""import <library>"" | python -c ""import <library>"""
+What is the purpose of pyvenv.cfg after the creation of a Python virtual environment?,cat myenv/pyvenv.cfg | Python version
+How can I install two versions of Python on a single Conda Environment?,conda create -n snakes python=3.5.3 python=3.7.1 | mamba create -n snakes python=3.5.3 python=3.7.1
+zsh: no matches found - trying to install pydantic[email],pip install 'pydantic[email]'
+Consequences for virtual env when system&#39;s Python is removed and/or updated,pip freeze > installed_libs.txt | deactivate
+How to create an empty python virtual environment,python3 --version | python3 -m venv test_venv
+How can I get my vscode terminal to use my venv for python rather than the system version?,python -m venv myvenv | python -m venv myvenv
+pyvenv returns non-zero exit status 1 (during the installation of pip stage),"Within it, invoke this well-known script to manually install pip(1) into /pyvenv.d: | latest version already."
+python 3.8 venv missing activate command,source test_env/bin/activate | python3 -m venv --without-pip test_env
+Reinstall packages automatically into virtual environment after Python minor version upgrade,in 3.7 runtime...
+python 3.7 venv broken after upgrade to Ubuntu 20.04,ln -s  /usr/bin/python3.7 python3
+How to get pip to install packages into the virtual environment?,"source tarballs and run python setup.py install after unpacking, with"
+How to make venv completely portable?,"python3 -m venv --copies venv | sed -i '43s/.*/VIRTUAL_ENV=""$(cd ""$(dirname ""$(dirname ""${BASH_SOURCE[0]}"" )"")"" \&\& pwd)""/' venv/bin/activate"
+"Creating a venv with python 3.10 manually installed on Ubuntu, fails",python distribution with just apt install python#.# | source package) or to make several small packages instead of a big one
+Anaconda 3 for Linux Has No ensurepip?,"===== First create the venv without pip, and **activate** it. | pyvenv test --without-pip"
+gunicorn not found when running a docker container with venv,source venv/bin/activate | gunicorn -b :5000 --access-logfile - --error-logfile - wsgi:app
+Python3 venv: Can env directory be renamed?,virtualenv --relocatable ENV
