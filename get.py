@@ -61,7 +61,7 @@ def generate_comprehensive_qa_pairs():
     """Generate comprehensive Q&A pairs with proper commands"""
     
     # Initialize Stack Overflow API
-    api_key = 'rl_PeHiEyssMzH8eUUh479ceTMGp'
+    api_key = <api-key>
     site = StackAPI('stackoverflow', key=api_key)
     site.page_size = 100
     site.max_pages = 2
