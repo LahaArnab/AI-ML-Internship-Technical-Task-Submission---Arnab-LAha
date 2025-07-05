@@ -1,5 +1,3 @@
-# AI-ML-Internship-Technical-Task-Submission---Arnab-Laha
-
 # Command Line Q&A Model Training Report
 
 ## Dataset Overview
